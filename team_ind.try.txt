@@ -1,0 +1,15 @@
+BAT,MS Dhoni(c/wk),12,67.99
+BAT,Virat Kohli,13,637.99
+BAT,Ajinkya Rahane,14,67.99
+BAT,Shikhar Dhawan,121,617.99
+BAT,Rohit Sharma,123,674.99
+ALL,Stuart Binny,312,675.99
+ALL,Suresh Raina,132,676.99
+ALL,Ravindra Jadeja,412,697.99
+BAT,Ambati Rayudu,142,67.998
+SBOW,Axar Patel,124,67.998
+SBOW,Ravichandran Ashwin,172,677.99
+FBOW,Bhuvneshwar Kumar,162,671.99
+FBOW,Mohammed Shami,142,617.99
+FBOW,Umesh Yadav,132,167.99
+FBOW,Ishant Sharma,112,67.991
