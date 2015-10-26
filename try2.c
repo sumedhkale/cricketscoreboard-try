@@ -15,10 +15,10 @@ list *lA,*lB;
 int tok = 0;
 node *p11,*q11;
 int over;
-OVER *ovr;
-teamscr *tscr;
-pship *ps;
-extras *ex;
+//OVER *ovr;
+//teamscr *tscr;
+//pship *ps;
+//extras *ex;
 //static batsman *batsmen;
 int res = 1,choice1,tossflag = 0,tAbat,tBbat,ser = 1;
 node *q,*r,*t;
@@ -128,9 +128,9 @@ void swap(list *l,int posi, int posj){
 	strcpy(q->fname,tmp->fname);
 	strcpy(q->lname,tmp->lname);
 	free(tmp);
-	ptmp = p->prof;
-	p->prof = q->prof;
-	q->prof = ptmp;
+	//ptmp = p->prof;
+	//p->prof = q->prof;
+	//q->prof = ptmp;
 	//free(ptmp);
 	/*tmp->prof->matches = p->prof->matches;
 	tmp->prof->matches = p->prof->matches;
@@ -539,7 +539,7 @@ void TEAMname(int a){
 }
 
 void owpsf(){
-	ovr = (OVER *)malloc(sizeof(struct over));
+	//ovr = (OVER *)malloc(sizeof(struct over));
 	int j,k,l,m;
 	owps = newwin(0,0,0,0);
 	/*char *ovp;
@@ -558,8 +558,8 @@ void owpsf(){
 	wprintw(owps,"\n\nselect pitch type(normal,hard,dry,damp,green,dusty,Wet)");
 	screen(7);
 	m = sc1(7);
-	mvwprintw(owps,20,40,"enter the no. of overs:");
-	wscanw(owps,"%d",ovr->n);
+	//mvwprintw(owps,20,40,"enter the no. of overs:");
+	//wscanw(owps,"%d",ovr->n);
 	wmove(owps,30,0);
 	wattron(owps,A_UNDERLINE | A_BOLD);
 	wprintw(owps,"GUIDELINES FOR THE TOSS\n");
@@ -632,10 +632,10 @@ void toss(){
 	wattroff(owps,A_UNDERLINE);
 	screen(8);
 	tossr = sc1(8);
-	wprintw(owps,"tossr:%d",tossr);
+	//wprintw(owps,"tossr:%d",tossr);
 	srandom(time(0));
 	k = random();
-	wprintw(owps,"k :%ld",k);
+	//wprintw(owps,"k :%ld",k);
 	if((k%2) == 0)
 		res = 0;
 	for(i=0;i<5;i++){
@@ -645,7 +645,7 @@ void toss(){
 		napms(50);
 	}
 	wdeleteln(owps);
-	wprintw(owps,"res:%d",res);
+	//wprintw(owps,"res:%d",res);
 	//wrefresh(owps);//user has chosen heads and toss results in heads as well
 	if( tossr == res ){
 		if(res == 0)
@@ -660,12 +660,12 @@ void toss(){
 		if(choice1 == 0){
 			tAbat = 1;
 			tBbat = 0;
-			wprintw(owps,"tAbat:%d tBbat:%d",tAbat,tBbat);
+			//wprintw(owps,"tAbat:%d tBbat:%d",tAbat,tBbat);
 		}
 		else{
 			tBbat = 1;
 			tAbat = 0;
-			wprintw(owps,"tAbat:%d tBbat:%d",tAbat,tBbat);
+			//wprintw(owps,"tAbat:%d tBbat:%d",tAbat,tBbat);
 		}			
 		tossflag = 1;
 		wrefresh(owps);	
@@ -681,20 +681,20 @@ void toss(){
 		
 		if((l%2) == 0)
 			ser = 0;
-		wprintw(owps,"l:%ld",l);
-		wprintw(owps,"ser:%d",ser); 
+		//wprintw(owps,"l:%ld",l);
+		//wprintw(owps,"ser:%d",ser); 
 		//	ser = 0;//bowl
 		if(ser==0){
 			mvwprintw(owps,21,53,"%s CHOSE TO BOWL FIRST.",whichteam(tsB));
 			tAbat = 1;
 			tBbat = 0;
-			wprintw(owps,"tAbat:%d tBbat:%d",tAbat,tBbat);
+			//wprintw(owps,"tAbat:%d tBbat:%d",tAbat,tBbat);
 		}
 		else{
 			mvwprintw(owps,21,53,"%s CHOSE TO BAT FIRST.",whichteam(tsB));
 			tBbat = 1;
 			tAbat = 0;
-			wprintw(owps,"tAbat:%d tBbat:%d",tAbat,tBbat);	
+			//wprintw(owps,"tAbat:%d tBbat:%d",tAbat,tBbat);	
 		} 
 		wrefresh(owps);
 	}
@@ -703,7 +703,7 @@ void toss(){
 	if user loses toss use random.c to decide what will user OR set a default that if user loses toses he will either everytime bat or 		everytime ball.*/
 
 }
-void getbatsman(int n,int pos){
+/*void getbatsman(int n,int pos){
 	profile *ptmp;
 	if((tAbat == 1) && (tBbat == 0))
 		t = p11 = lA->head;	
@@ -715,7 +715,7 @@ void getbatsman(int n,int pos){
 	ptmp = t->prof;
 	mvwprintw(batm,2+pos,0,"%s %s %s",t->attr,t->fname,t->lname);
 	mvwprintw(batm,2+pos,42,"%d    \t\t%d\t\t\t%d    \t\t%d\t\t\t%f",ptmp->runs,ptmp->balls,ptmp->fours,ptmp->sixes,ptmp->strikerate);
-}
+}*/
 /*void nextball(char ball){
 	switch(ball){
 		case '0':
@@ -754,18 +754,20 @@ void scrboard(){
 	//batsman batsman[1];
 	//batsmen = batman;//*batsmanB;//*batsmen;
 	//batsmanA = NULL;//batsmanB = NULL;
-	ex = (extras *)malloc(sizeof(struct extras));
+	/*ex = (extras *)malloc(sizeof(struct extras));
 	ps = (pship *)malloc(sizeof(struct partnership));
-	tscr = (teamscr *)malloc(sizeof(struct teamscore));
+	tscr = (teamscr *)malloc(sizeof(struct teamscore));*/
 
 	scrbrd = newwin(0,0,0,0);
 	WINDOW *scr,*batm,*bowl,*curr,*extras,*thisover,*prevover;
 	int y,x,batflag = 0;
 	float CRR = 0;
 	int projscr=0;
-	ps->scr = ps->balls = 0;
-	ex->legbyes = ex->byes =ex->wides = ex->noballs = 0;
-	tscr->crr = tscr->rrr = tscr->total = tscr->wickets = 0;
+	pship ps;
+	ps.scr = ps.balls = 0;
+	//ps->scr = ps->balls = 0;
+	//ex->legbyes = ex->byes =ex->wides = ex->noballs = 0;
+	//tscr->crr = tscr->rrr = tscr->total = tscr->wickets = 0;
 
 	
 	getmaxyx(scrbrd,y,x);
@@ -856,7 +858,7 @@ void scrboard(){
 	
 	
 	
-	nextbatsman(1,0);
+	/*nextbatsman(1,0);
 	nextbatsman(2,0);
 	
 	
